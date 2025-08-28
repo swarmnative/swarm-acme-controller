@@ -165,7 +165,6 @@ services:
 注意：
 - 将 `docker-socket-proxy` 改为你的 socket-proxy 服务名；或直接挂载 `/var/run/docker.sock`（不推荐）。
 - `dns_api_token` 请在 Swarm 预先创建，并在容器内由 DNS Provider 官方变量读取（如 Cloudflare 为 `CF_API_TOKEN`，通过 `PROVIDER_ENV_FILES` 注入）。
-- `OWNER` 替换为你的 GitHub 用户/组织名。
 - 若无需 socket-proxy，可不设 `DOCKER_HOST`，并在服务中挂载本地 `/var/run/docker.sock:/var/run/docker.sock:ro`。
 
 多域名与 Traefik 配置
@@ -327,4 +326,5 @@ services:
       - TLS_CONFIG_ENABLE=false
 ```
 See the Chinese sections above for full environment variables, Traefik snippet, ZeroSSL secret injection, and socket-proxy permissions.
+
 
